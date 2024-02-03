@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 // eslint-disable-next-line react/prop-types
-import "./style.css";
+
 export const SideBar = ({ currrentState, setCurrentState }) => {
   return (
     <>
