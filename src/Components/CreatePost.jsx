@@ -1,10 +1,11 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import { useContext, useRef } from "react";
 import { PostList } from "../Store/post-listStore";
-
+import { useNavigate } from "react-router-dom";
 export const CreatePost = () => {
   const { addPost } = useContext(PostList);
-
+  const navigate = useNavigate();
   const userIdElement = useRef();
   const PostTitleElement = useRef();
   const PostBodyElement = useRef();
@@ -16,14 +17,34 @@ export const CreatePost = () => {
     const PostTitle = PostTitleElement.current.value;
     const PostBody = PostBodyElement.current.value;
     const PostReaction = PostReactionElement.current.value;
+    // console.log(`This is reaction in on sumbit function ${PostReaction}`);
+
     const PostTags = PostTagsElement.current.value.split(" ");
     userIdElement.current.value = "";
     PostTitleElement.current.value = "";
     PostBodyElement.current.value = "";
-    PostBodyElement.current.value = "";
+    PostReactionElement.current.value = "";
     PostTagsElement.current.value = "";
-    addPost(userId, PostTitle, PostBody, PostReaction, PostTags);
+
+    fetch("https://dummyjson.com/posts/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: PostTitle,
+        body: PostBody,
+        reactions: PostReaction,
+        userId: userId,
+        tags: PostTags,
+      }),
+    })
+      .then((res) => res.json())
+      .then((post) => {
+        console.log(post.reactions);
+        addPost(post);
+      });
+    navigate("/");
   };
+
   return (
     <>
       <form className="" onSubmit={HandleSubmit}>
@@ -82,7 +103,7 @@ export const CreatePost = () => {
             Reaction
           </label>
           <input
-            type="number"
+            type="text"
             ref={PostReactionElement}
             placeholder="How many reacted here "
             className="shadow-sm bg-gray-500 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light m-5 w-[90%] "

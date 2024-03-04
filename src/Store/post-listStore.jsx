@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useState, useEffect } from "react";
 
 export const PostList = createContext({
   postlist: [],
+  Fetchdata: false,
   addPost: () => {},
   DeletePost: () => {},
 });
@@ -13,23 +14,30 @@ const postListReducer = (CurrPostList, action) => {
     newpostList = CurrPostList.filter(
       (post) => post.id !== action.payload.postId
     );
+  } else if (action.type === "ADD_INITIAL_POST") {
+    newpostList = action.payload.posts;
   } else if (action.type === "ADD_POST") {
     newpostList = [action.payload, ...CurrPostList];
   }
+
   return newpostList;
 };
 
 const PostlistProvider = ({ children }) => {
-  const addPost = (userId, PostTitle, PostBody, PostReaction, PostTags) => {
+  const [Fetchdata, setFetchdata] = useState(false);
+
+  const addPost = (post) => {
+    console.log("Add List post call");
     dispatchPostList({
       type: "ADD_POST",
+      payload: post,
+    });
+  };
+  const addIneteialPost = (posts) => {
+    dispatchPostList({
+      type: "ADD_INITIAL_POST",
       payload: {
-        id: Date.now(),
-        title: PostTitle,
-        body: PostBody,
-        reaction: PostReaction,
-        userId: userId,
-        tags: PostTags,
+        posts,
       },
     });
   };
@@ -43,11 +51,21 @@ const PostlistProvider = ({ children }) => {
     });
   };
 
-  const [postlist, dispatchPostList] = useReducer(
-    postListReducer,
-
-    DefaultPost_list
-  );
+  const [postlist, dispatchPostList] = useReducer(postListReducer, []);
+  useEffect(() => {
+    setFetchdata(true);
+    const controller = new AbortController();
+    const signal = controller.signal;
+    fetch("https://dummyjson.com/posts")
+      .then((res) => res.json())
+      .then((data) => {
+        addIneteialPost(data.posts);
+        setFetchdata(false);
+      });
+    return () => {
+      controller.abort();
+    };
+  }, []);
 
   return (
     <>
@@ -55,6 +73,7 @@ const PostlistProvider = ({ children }) => {
         value={{
           postlist,
           addPost,
+          Fetchdata,
           DeletePost,
         }}
       >
@@ -63,14 +82,5 @@ const PostlistProvider = ({ children }) => {
     </>
   );
 };
+
 export default PostlistProvider;
-const DefaultPost_list = [
-  {
-    id: "1",
-    title: "lorem",
-    body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, perspiciatis ",
-    reaction: 2,
-    userId: "#rizvi",
-    tags: ["#lorem", "#Ipsum"],
-  },
-];

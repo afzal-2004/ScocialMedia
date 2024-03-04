@@ -36,7 +36,7 @@ export const Post = ({ post }) => {
         ))}
         <p className="bg-green-300  p-2 m-5   rounded-3xl ">
           {" "}
-          Rection :{post.reaction}
+          Reaction-{post.reactions}
         </p>
       </div>
     </>

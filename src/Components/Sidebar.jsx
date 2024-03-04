@@ -2,7 +2,8 @@
 /* eslint-disable no-unused-vars */
 // eslint-disable-next-line react/prop-types
 import "./Style.css";
-export const SideBar = ({ currrentState, setCurrentState }) => {
+import { NavLink } from "react-router-dom";
+export const SideBar = () => {
   return (
     <>
       <aside className="flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto  border-rtl:border-r-0dark:border-gray-700  bg-slate-900">
@@ -32,40 +33,24 @@ export const SideBar = ({ currrentState, setCurrentState }) => {
 
         <div className="flex flex-col justify-between flex-1 mt-6">
           <nav>
-            <a
-              className={`flex items-center  py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-md dark:text-gray-400    dark:hover:text-gray-200 hover:text-gray-700  px-4 ${
-                currrentState === "Home" && "active"
-              }`}
-              href="#"
+            <NavLink
+              className={`flex items-center  py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-md dark:text-gray-400    dark:hover:text-gray-200 hover:text-gray-700  px-4`}
+              to="/"
             >
-              <span
-                className="mx-4 font-medium  text-white hover:text-gray-300"
-                onClick={() => {
-                  console.log("createPost ");
-                  setCurrentState("Home");
-                }}
-              >
+              <span className="mx-4 font-medium  text-white hover:text-gray-300">
                 Home
               </span>
-            </a>
+            </NavLink>
 
-            <a
+            <NavLink
               className={`flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-md dark:text-gray-400  
-              :hover:text-gray-200 hover:text-gray-700  ${
-                currrentState === "CretePost" && "active"
-              }`}
-              href="#"
+              :hover:text-gray-200 hover:text-gray-700 `}
+              to="/CreatePost"
             >
-              <span
-                className="mx-4 font-medium  text-white  hover:text-gray-300"
-                onClick={() => {
-                  console.log("createPost ");
-                  setCurrentState("CretePost");
-                }}
-              >
+              <span className="mx-4 font-medium  text-white  hover:text-gray-300">
                 CreatePost{" "}
               </span>
-            </a>
+            </NavLink>
           </nav>
         </div>
       </aside>
