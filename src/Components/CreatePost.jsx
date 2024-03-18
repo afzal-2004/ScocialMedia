@@ -43,6 +43,7 @@ export const CreatePost = () => {
         addPost(post);
       });
     navigate("/");
+    window.scrollTo(0, 0);
   };
 
   return (
