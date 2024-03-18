@@ -19,7 +19,7 @@ export const CreatePost = () => {
     const PostReaction = PostReactionElement.current.value;
     // console.log(`This is reaction in on sumbit function ${PostReaction}`);
 
-    const PostTags = PostTagsElement.current.value.split(" ");
+    const PostTags = PostTagsElement.current.value.split("#");
     userIdElement.current.value = "";
     PostTitleElement.current.value = "";
     PostBodyElement.current.value = "";
@@ -58,7 +58,7 @@ export const CreatePost = () => {
             id="UserId"
             ref={userIdElement}
             className="shadow-sm bg-gray-500 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light m-5 w-[90%]"
-            placeholder="Usee-13"
+            placeholder="0-100"
           />
         </div>
         <div className=" w-full">
@@ -95,7 +95,7 @@ export const CreatePost = () => {
           <input
             type="text"
             ref={PostTagsElement}
-            placeholder="input All taags with placeholder"
+            placeholder="input All taags with  # symbol"
             className="shadow-sm bg-gray-500 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light m-5 w-[90%]"
           />
         </div>
