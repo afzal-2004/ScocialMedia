@@ -47,9 +47,9 @@ export const CreatePost = () => {
 
   return (
     <>
-      <form className="" onSubmit={HandleSubmit}>
+      <form className=" m-5 text-sm sm:text-xl " onSubmit={HandleSubmit}>
         <div className=" ">
-          <label htmlFor="Title" className="">
+          <label htmlFor="Title" className=" text-sm sm:text-xl">
             UserId
           </label>
           <input
@@ -57,7 +57,7 @@ export const CreatePost = () => {
             id="UserId"
             ref={userIdElement}
             className="shadow-sm bg-gray-500 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light m-5 w-[90%]"
-            placeholder="Userid"
+            placeholder="Usee-13"
           />
         </div>
         <div className=" w-full">
@@ -68,7 +68,7 @@ export const CreatePost = () => {
             type="text"
             id="title"
             ref={PostTitleElement}
-            className="shadow-sm bg-gray-500 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light m-5 w-[90%]"
+            className="shadow-sm bg-gray-500 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light m-5  w-[90%]"
             placeholder="Tittle"
           />
         </div>
@@ -98,7 +98,7 @@ export const CreatePost = () => {
             className="shadow-sm bg-gray-500 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light m-5 w-[90%]"
           />
         </div>
-        <div className="mb-5">
+        <div className=" ">
           <label htmlFor="Tags" className=" ">
             Reaction
           </label>
@@ -109,13 +109,14 @@ export const CreatePost = () => {
             className="shadow-sm bg-gray-500 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light m-5 w-[90%] "
           />
         </div>
-
-        <button
-          type="submit"
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 "
-        >
-          Create New Post
-        </button>
+        <center>
+          <button
+            type="submit"
+            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800   "
+          >
+            Create New Post
+          </button>
+        </center>
       </form>
     </>
   );

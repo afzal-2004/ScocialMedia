@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Header } from "../Components/Header";
+// import { Header } from "../Components/Header";
 import { CreatePost } from "../Components/CreatePost";
 import { SideBar } from "../Components/Sidebar";
 import { Footer } from "../Components/Footer";
@@ -14,13 +14,13 @@ function App() {
       <PostlistProvider>
         <div className="   text-white   text-2xl bg-slate-900">
           {" "}
-          <div className=" flex">
+          <div className="  sm:flex">
             <SideBar
               currrentState={CurrentState}
               setCurrentState={setCurrentState}
             />
             <div className=" border border-blue-300 w-[100%]">
-              <Header />
+              {/* <Header /> */}
               <Outlet />
               <Footer />
             </div>

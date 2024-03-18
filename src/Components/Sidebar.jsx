@@ -6,38 +6,14 @@ import { NavLink } from "react-router-dom";
 export const SideBar = () => {
   return (
     <>
-      <aside className="flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto  border-rtl:border-r-0dark:border-gray-700  bg-slate-900">
-        <div className="relative mt-6">
-          <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-            <svg
-              className="w-5 h-5 text-gray-400"
-              viewBox="0 0 24 24"
-              fill="none"
-            >
-              <path
-                d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              ></path>
-            </svg>
-          </span>
-
-          <input
-            type="text"
-            className="w-full py-2 pl-10 pr-4 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring"
-            placeholder="Search"
-          />
-        </div>
-
-        <div className="flex flex-col justify-between flex-1 mt-6">
-          <nav>
+      <aside className="   sm:block  sm:flex-col sm:w-64   flex flex-row  sm:h-screen  sm:px-4 py-8 overflow-y-auto  border-rtl:border-r-0    w-full dark:border-gray-700  bg-slate-900">
+        <div className=" flex  sm:flex-col  justify-evenly sm:justify-between flex-1  sm:mt-6    ">
+          <nav className="  flex sm:block">
             <NavLink
               className={`flex items-center  py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-md dark:text-gray-400    dark:hover:text-gray-200 hover:text-gray-700  px-4`}
               to="/"
             >
-              <span className="mx-4 font-medium  text-white hover:text-gray-300">
+              <span className="mx-4 font-medium  text-white hover:text-gray-300 text-sm">
                 Home
               </span>
             </NavLink>
@@ -47,7 +23,7 @@ export const SideBar = () => {
               :hover:text-gray-200 hover:text-gray-700 `}
               to="/CreatePost"
             >
-              <span className="mx-4 font-medium  text-white  hover:text-gray-300">
+              <span className="mx-4 font-medium  text-white  hover:text-gray-300 text-sm">
                 CreatePost{" "}
               </span>
             </NavLink>
