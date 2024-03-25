@@ -6,7 +6,10 @@ import { NavLink } from "react-router-dom";
 export const SideBar = () => {
   return (
     <>
-      <aside className="   sm:block  sm:flex-col sm:w-64   flex flex-row  sm:h-screen  sm:px-4 py-8 overflow-y-auto  border-rtl:border-r-0    w-full dark:border-gray-700  bg-slate-900">
+      <aside
+        className="   sm:block  sm:flex-col sm:w-64   flex flex-row  sm:h-full  sm:px-4 py-8  
+        border border-red-500  w-full bg-slate-500   "
+      >
         <div className=" flex  sm:flex-col  justify-evenly sm:justify-between flex-1  sm:mt-6    ">
           <nav className="  flex sm:block">
             <NavLink

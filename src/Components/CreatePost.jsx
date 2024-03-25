@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
+import "./Style.css";
 import { useContext, useRef } from "react";
 import { PostList } from "../Store/post-listStore";
 import { useNavigate } from "react-router-dom";
@@ -48,16 +49,19 @@ export const CreatePost = () => {
 
   return (
     <>
-      <form className=" m-5 text-sm sm:text-xl " onSubmit={HandleSubmit}>
-        <div className=" ">
-          <label htmlFor="Title" className=" text-sm sm:text-xl">
-            UserId
+      <form
+        className=" m-5 text-sm sm:text-xl text-black  "
+        onSubmit={HandleSubmit}
+      >
+        <div className="">
+          <label htmlFor="floating_email" className="">
+            User id
           </label>
           <input
             type="text"
             id="UserId"
             ref={userIdElement}
-            className="shadow-sm bg-gray-500 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light m-5 w-[90%]"
+            className=" Input "
             placeholder="0-100"
           />
         </div>
@@ -69,7 +73,7 @@ export const CreatePost = () => {
             type="text"
             id="title"
             ref={PostTitleElement}
-            className="shadow-sm bg-gray-500 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light m-5  w-[90%]"
+            className="Input "
             placeholder="Tittle"
           />
         </div>
@@ -82,10 +86,9 @@ export const CreatePost = () => {
             ref={PostBodyElement}
             placeholder="Text Releted to post ..."
             id="text"
-            rows={5}
+            rows={3}
             cols={20}
-            className="shadow-sm bg-gray-500 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 
-            text-black dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light w-[90%] m-5"
+            className="Input "
           />
         </div>
         <div className="mb-5">
@@ -96,7 +99,7 @@ export const CreatePost = () => {
             type="text"
             ref={PostTagsElement}
             placeholder="input All taags with  # symbol"
-            className="shadow-sm bg-gray-500 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light m-5 w-[90%]"
+            className="Input "
           />
         </div>
         <div className=" ">
@@ -107,13 +110,13 @@ export const CreatePost = () => {
             type="text"
             ref={PostReactionElement}
             placeholder="How many reacted here "
-            className="shadow-sm bg-gray-500 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light m-5 w-[90%] "
+            className="Input "
           />
         </div>
         <center>
           <button
             type="submit"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800   "
+            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800  mt-[5%]  "
           >
             Create New Post
           </button>

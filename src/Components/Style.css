@@ -1,3 +1,12 @@
 .active {
     background-color: rgba(50, 50, 250, 0.7);
 }
+
+.Postdesign {
+    @apply shadow-sm border border-gray-300 text-sm rounded-lg focus:border-blue-100 block p-2.5 placeholder-gray-400 text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 m-5 w-[90%]
+}
+
+/* <input type="email" name="floating_email" id="floating_email" class="" placeholder=" " required /> */
+.Input {
+    @apply block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 mb-[5%]
+}

@@ -12,15 +12,17 @@ function App() {
   return (
     <>
       <PostlistProvider>
-        <div className="   text-white   text-2xl bg-slate-900">
+        <div className="   text-white   text-2xl  bg-purple-300">
           {" "}
-          <div className="  sm:flex">
-            <SideBar
-              currrentState={CurrentState}
-              setCurrentState={setCurrentState}
-            />
-            <div className=" border border-blue-300 w-[100%]">
-              {/* <Header /> */}
+          <div className="  sm:flex border border-red-500">
+            <div className="  ">
+              <SideBar
+                currrentState={CurrentState}
+                setCurrentState={setCurrentState}
+              />
+            </div>
+
+            <div className="  w-[100%]">
               <Outlet />
               <Footer />
             </div>

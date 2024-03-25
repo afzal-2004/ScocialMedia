@@ -1,10 +1,10 @@
 export const Footer = () => {
   return (
     <>
-      <footer className=" rounded-lg shadow dark:bg-gray-900  p-3">
+      <footer className=" rounded-lg shadow   p-3  text-black">
         <div className="w-full  mx-auto ">
           <div className="sm:flex sm:items-center sm:justify-between">
-            <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400 justify-around">
+            <ul className="flex flex-wrap items-center mb-6 text-sm font-medium justify-around">
               <li>
                 <a href="#" className="hover:underline me-4 md:me-6">
                   About
