@@ -98,7 +98,7 @@ export const CreatePost = () => {
           <input
             type="text"
             ref={PostTagsElement}
-            placeholder="input All taags with  # symbol"
+            placeholder="input All tags with # symbol"
             className="Input "
           />
         </div>
